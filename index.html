@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подарки и сувениры своими руками</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/desktop.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+<body ng-app="beautySolutions">
+<div class="menu-container">
+    <div class="logo"><img src="images/logo.svg"></div>
+    <div class="menu">
+        <a class="active">ГЛАВНАЯ</a>
+        <a>ГАЛЕРЕЯ</a>
+        <a>МАСТЕР-КЛАССЫ</a>
+        <a>КОНТАКТЫ</a>
+    </div>
+</div>
+<div class="main-events-container">
+    <div class="main-event cover-image-full-height">
+        <div class="text">
+            <p class="header">Плетение мандал Ojos de Dios</p>
+            <p class="description">Индейские мандалы Ojos de dios &#8211 «Глаза Бога».
+                <br>Ищем баланс духовного и материального
+                <br> на фестивале <a href="http://www.vremyadzen.com/" target="_blank">«ВРЕМЯ ДЗЕН»</a></p>
+            <p class="date">Когда: &nbsp 29 октября 18:00-20:00</p>
+            <p class="price">Цена: &nbsp 200 грн</p>
+        </div>
+        <div class="button"><p>ПОДРОБНЕЕ</p></div>
+    </div>
+    <div class="sub-events">
+        <div class="sub-event cover-image-full-height hover-zoom-in top-event">
+            <div class="date-container"><p>12.11</p></div>
+            <div class="title-container"><p>ДЕКОР ШКАТУЛОК</p></div>
+        </div>
+        <div class="sub-event cover-image-full-height hover-zoom-in bottom-event">
+            <div class="date-container"><p>05.12</p></div>
+            <div class="title-container"><p>НАСТЕННЫЕ ЧАСЫ</p></div>
+        </div>
+    </div>
+</div>
+<div class="about-container cover-image-full-height">
+    <div class="about">
+        <div class="description">
+            <p class="header">Ксения <br> Могильницкая</p>
+            <p class="tab-text">Декупаж и роспись ткани мои любимые <br> направления в творчестве.</p>
+            <div class="middle-text ">
+                <div class="image cover-image-full-width"></div>
+                <p class="text">На мастер-классах я делюсь
+                    <br> своим опытом преображения
+                    <br> простых вещей в вещи
+                    <br> уникальные и эксклюзивные.</p>
+            </div>
+            <p class="tab-text" style="margin-bottom: 0">Мои ученицы раскрывают свои таланты <br>
+                и создают оригинальный декор предметов интерьера, <br> одежды и эко-сумочек.</p>
+        </div>
+        <div class="main-photo"><img class="full-height-img" src="images/ksenia-photo.jpg"></div>
+    </div>
+    <div class="slogan"><p>Приходи творить и вдохновляться...</p></div>
+</div>
+<div class="gallery-container">
+    <div class="header">Как это бывает</div>
+    <div class="gallery">
+        <div class="arrow left inactive">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
+                <g id="right">
+                    <path class="svg-arrow"
+                          d="M35,64.65a0.79,0.79,0,1,1-1.12,1.12L2.23,34.13a0.79,0.79,0,0,1,0-1.12L33.87,1.37A0.79,0.79,0,0,1,35,2.49L3.9,33.57Z"/>
+                </g>
+            </svg>
+        </div>
+        <div class="photos-container">
+            <div class="main-photo cover-image-full-height" id="photo-01"></div>
+            <div class="side-photos">
+                <div class="side-photo cover-image-full-width top-photo" id="photo-02"></div>
+                <div class="side-photo cover-image-full-width bottom-photo" id="photo-03"></div>
+            </div>
+        </div>
+        <div class="arrow right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
+                <g id="right">
+                    <path class="svg-arrow"
+                          d="M2.23,64.65a0.79,0.79,0,1,0,1.12,1.12L35,34.13A0.79,0.79,0,0,0,35,33L3.35,1.37A0.79,0.79,0,0,0,2.23,2.49L33.32,33.57Z"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="events-container" ng-controller="eventsController">
+    <div class="header">Мастер-классы</div>
+    <div class="events">
+        <div class="event-row" ng-repeat="eventSet in eventsSets">
+            <div class="event" ng-repeat="event in eventSet">
+                <div class="img-container" ng-style="{'background-image': 'url(images/' + event.imageName + ')'}">
+                    <!--<img src="images/{{event.imageName}}">-->
+                </div>
+                <p ng-bind-html="event.description | sanitize"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>E-mail:</p>
+    <div class="socials"></div>
+</div>
+</body>
+</html>

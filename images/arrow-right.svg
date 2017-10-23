@@ -1,0 +1,7 @@
+<svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
+    <title>0</title>
+    <g id="right">
+        <path class="svg-arrow"
+              d="M2.23,64.65a0.79,0.79,0,1,0,1.12,1.12L35,34.13A0.79,0.79,0,0,0,35,33L3.35,1.37A0.79,0.79,0,0,0,2.23,2.49L33.32,33.57Z"/>
+    </g>
+</svg>
