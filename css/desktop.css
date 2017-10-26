@@ -445,13 +445,45 @@ body {
     transition: color 0.5s linear;
 }
 
-.footer{
+.footer {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 5vh 0;
 }
 
-.footer{
+.footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+}
 
+.footer .socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+.footer .socials svg {
+    height: 7.5vh;
+    margin: 0 .7vw;
+}
+
+.footer .socials svg:first-child {
+    height: 7vh
+}
+
+.footer .socials .svg-socials {
+    fill: #3a3a3a;
+    transition: fill 0.3s ease;
+}
+
+.footer .socials svg:hover {
+    cursor: pointer;
+}
+
+.footer .socials svg:hover .svg-socials {
+    fill: #ef902a;
 }

@@ -10,16 +10,22 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 </head>
 <body ng-app="beautySolutions">
-<div class="menu-container">
+<div class="menu-container"  ng-controller="menuCtrl">
     <div class="logo"><img src="images/logo.svg"></div>
     <div class="menu">
-        <a class="active">ГЛАВНАЯ</a>
-        <a>ГАЛЕРЕЯ</a>
-        <a>МАСТЕР-КЛАССЫ</a>
-        <a>КОНТАКТЫ</a>
+        <a id="header-link" ng-click="scrollTo('header')"
+           ng-class="{'active': activeMenuId == 'header-link'}">ГЛАВНАЯ</a>
+        <a id="about-link" ng-click="scrollTo('about')"
+           ng-class="{'active': activeMenuId == 'about-link'}">ОБО МНЕ</a>
+        <a id="gallery-link" ng-click="scrollTo('gallery')"
+           ng-class="{'active': activeMenuId == 'gallery-link'}">ГАЛЕРЕЯ</a>
+        <a id="events-link" ng-click="scrollTo('events')"
+           ng-class="{'active': activeMenuId == 'events-link'}">МАСТЕР-КЛАССЫ</a>
+        <a id="footer-link" ng-click="scrollTo('footer')"
+           ng-class="{'active': activeMenuId == 'footer-link'}">КОНТАКТЫ</a>
     </div>
 </div>
-<div class="main-events-container">
+<div id="header" class="main-events-container">
     <div class="main-event cover-image-full-height">
         <div class="text">
             <p class="header">Плетение мандал Ojos de Dios</p>
@@ -42,7 +48,7 @@
         </div>
     </div>
 </div>
-<div class="about-container cover-image-full-height">
+<div id="about" class="about-container cover-image-full-height">
     <div class="about">
         <div class="description">
             <p class="header">Ксения <br> Могильницкая</p>
@@ -61,7 +67,7 @@
     </div>
     <div class="slogan"><p>Приходи творить и вдохновляться...</p></div>
 </div>
-<div class="gallery-container">
+<div id="gallery" class="gallery-container">
     <div class="header">Как это бывает</div>
     <div class="gallery">
         <div class="arrow left inactive">
@@ -89,7 +95,7 @@
         </div>
     </div>
 </div>
-<div class="events-container" ng-controller="eventsController">
+<div id="events" class="events-container" ng-controller="eventsController">
     <div class="header">Мастер-классы</div>
     <div class="events">
         <div class="event-row" ng-repeat="eventSet in eventsSets">
@@ -102,9 +108,21 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <p>E-mail:</p>
-    <div class="socials"></div>
+<div id="footer" class="footer">
+    <p>E-mail: sales@parmax.kiev.ua</p>
+    <div class="socials">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30" x="0px" y="0px">
+            <path class="svg-socials"
+                  d="M7.42,14.08H8.77v6.76a1.42,1.42,0,0,0,1.42,1.41h2.68a1.42,1.42,0,0,0,1.43-1.41V14.08h1.35a1.64,1.64,0,0,0,1.34-1l.92-1.81a.49.49,0,0,0,0-.1A1.4,1.4,0,0,0,17.7,10a1.42,1.42,0,0,0-1.12-.54H14.3V6.82h2.27A1.42,1.42,0,0,0,18,5.42V3.16a1.42,1.42,0,0,0-1.42-1.41H13.8c-3.38,0-5,2.09-5,6.39V9.45H7.42A1.42,1.42,0,0,0,6,10.86v1.81A1.42,1.42,0,0,0,7.42,14.08ZM7,10.86a.42.42,0,0,1,.42-.41H9.27a.5.5,0,0,0,.5-.5V8.14c0-3.78,1.2-5.39,4-5.39h2.77a.42.42,0,0,1,.42.41V5.42a.42.42,0,0,1-.42.41H13.8a.5.5,0,0,0-.5.5V10a.5.5,0,0,0,.5.5h2.77a.43.43,0,0,1,.34.16.39.39,0,0,1,.08.3l-.89,1.74c-.16.29-.37.43-.46.43H13.8a.5.5,0,0,0-.5.5v7.26a.42.42,0,0,1-.43.41H10.2a.42.42,0,0,1-.42-.41V13.58a.5.5,0,0,0-.5-.5H7.42A.42.42,0,0,1,7,12.67Z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30" x="0px" y="0px">
+            <g class="svg-socials">
+                <path d="M16,3.5H8A4.5,4.5,0,0,0,3.5,8v8A4.5,4.5,0,0,0,8,20.5h8A4.5,4.5,0,0,0,20.5,16V8A4.5,4.5,0,0,0,16,3.5ZM19.5,16A3.5,3.5,0,0,1,16,19.5H8A3.5,3.5,0,0,1,4.5,16V8A3.5,3.5,0,0,1,8,4.5h8A3.5,3.5,0,0,1,19.5,8Z"/>
+                <path d="M12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"/>
+                <path d="M16.5,6.5a1,1,0,1,0,1,1A1,1,0,0,0,16.5,6.5Zm0,1h0Z"/>
+            </g>
+        </svg>
+    </div>
 </div>
 </body>
 </html>
