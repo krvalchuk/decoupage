@@ -1,4 +1,4 @@
-<div class="menu-container"  ng-controller="menuCtrl">
+<div class="menu-container" ng-controller="menuCtrl">
     <div class="logo"><img src="images/logo.svg"></div>
     <div class="menu">
         <a id="header-link" ng-click="scrollTo('header')"
@@ -13,28 +13,31 @@
            ng-class="{'active': activeMenuId == 'footer-link'}">КОНТАКТЫ</a>
     </div>
 </div>
-<div id="header" class="main-events-container">
-    <div class="main-event cover-image-full-height">
-        <div class="text">
-            <p class="header">Плетение мандал Ojos de Dios</p>
-            <p class="description">Индейские мандалы Ojos de dios &#8211 «Глаза Бога».
-                <br>Ищем баланс духовного и материального
-                <br> на фестивале <a href="http://www.vremyadzen.com/" target="_blank">«ВРЕМЯ ДЗЕН»</a></p>
-            <p class="date">Когда: &nbsp 29 октября 18:00-20:00</p>
-            <p class="price">Цена: &nbsp 200 грн</p>
-        </div>
-        <a class="button" href="#!event"><p>ПОДРОБНЕЕ</p></a>
-    </div>
-    <div class="sub-events">
-        <div class="sub-event cover-image-full-height hover-zoom-in top-event">
-            <div class="date-container"><p>12.11</p></div>
-            <div class="title-container"><p>ДЕКОР ШКАТУЛОК</p></div>
-        </div>
-        <div class="sub-event cover-image-full-height hover-zoom-in bottom-event">
-            <div class="date-container"><p>05.12</p></div>
-            <div class="title-container"><p>НАСТЕННЫЕ ЧАСЫ</p></div>
+<div id="header" class="main-events-container" ng-controller="mainEventCtrl">
+    <div class="main-event">
+        <div class="image cover-image-full-height"></div>
+        <div class="information">
+            <div class="text">
+                <p class="header">Плетение мандал <br> Ojos de Dios</p>
+                <p class="description">Индейские мандалы Ojos de dios &#8211 «Глаза Бога».
+                    <br>Ищем баланс духовного и материального
+                    <br> на фестивале <a href="http://www.vremyadzen.com/" target="_blank">«ВРЕМЯ ДЗЕН»</a></p>
+                <p class="date">Когда: &nbsp 29 октября 18:00-20:00</p>
+                <p class="price">Цена: &nbsp 200 грн</p>
+            </div>
+            <a class="button" href="#!event"><p>ПОДРОБНЕЕ</p></a>
         </div>
     </div>
+    <!--<div class="sub-events">-->
+    <!--<div class="sub-event cover-image-full-height hover-zoom-in top-event">-->
+    <!--<div class="date-container"><p>12.11</p></div>-->
+    <!--<div class="title-container"><p>ДЕКОР ШКАТУЛОК</p></div>-->
+    <!--</div>-->
+    <!--<div class="sub-event cover-image-full-height hover-zoom-in bottom-event">-->
+    <!--<div class="date-container"><p>05.12</p></div>-->
+    <!--<div class="title-container"><p>НАСТЕННЫЕ ЧАСЫ</p></div>-->
+    <!--</div>-->
+    <!--</div>-->
 </div>
 <div id="about" class="about-container cover-image-full-height">
     <div class="about">
@@ -55,27 +58,34 @@
     </div>
     <div class="slogan"><p>Приходи творить и вдохновляться...</p></div>
 </div>
-<div id="gallery" class="gallery-container">
+<div id="gallery" class="gallery-container" ng-controller="galleryCtrl">
     <div class="header">Как это бывает</div>
     <div class="gallery">
-        <div class="arrow left inactive">
+        <div class="arrow inactive left" id="galleryLeftArrow" ng-click="leftArrowClick()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
-                <g id="right">
+                <g>
                     <path class="svg-arrow"
                           d="M35,64.65a0.79,0.79,0,1,1-1.12,1.12L2.23,34.13a0.79,0.79,0,0,1,0-1.12L33.87,1.37A0.79,0.79,0,0,1,35,2.49L3.9,33.57Z"/>
                 </g>
             </svg>
         </div>
         <div class="photos-container">
-            <div class="main-photo cover-image-full-height" id="photo-01"></div>
-            <div class="side-photos">
-                <div class="side-photo cover-image-full-width top-photo" id="photo-02"></div>
-                <div class="side-photo cover-image-full-width bottom-photo" id="photo-03"></div>
+            <div id="photosViewer">
+                <div class="photoSet" ng-repeat="i in  [] | range:4">
+                    <div class="main-photo cover-image-full-height"
+                         ng-style="{'background-image': 'url(content/gallery/' + {{i*3}} + '.jpg)'}"></div>
+                    <div class="side-photos">
+                        <div class="side-photo cover-image-full-width top-photo"
+                             ng-style="{'background-image': 'url(content/gallery/' + {{i*3+1}} + '.jpg)'}"></div>
+                        <div class="side-photo cover-image-full-width bottom-photo"
+                             ng-style="{'background-image': 'url(content/gallery/' + {{i*3+2}} + '.jpg)'}"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="arrow right">
+        <div class="arrow right" id="galleryRightArrow" ng-click="rightArrowClick()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
-                <g id="right">
+                <g>
                     <path class="svg-arrow"
                           d="M2.23,64.65a0.79,0.79,0,1,0,1.12,1.12L35,34.13A0.79,0.79,0,0,0,35,33L3.35,1.37A0.79,0.79,0,0,0,2.23,2.49L33.32,33.57Z"/>
                 </g>
