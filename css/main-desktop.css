@@ -46,11 +46,16 @@ body {
     display: flex;
     justify-content: space-between;
     /*border-bottom: 1px solid rgba(252,214,188, 1);*/
-    padding: 3vh 5vw;
+    padding: 2vw 5vw;
+    align-items: center;
+}
+
+.menu-container .logo {
+    height: 100%;
 }
 
 .menu-container .logo img {
-    height: 10.5vh;
+    height: 5vw;
     /*margin-left: 3vw;*/
 }
 
@@ -62,7 +67,7 @@ body {
 .menu-container .menu a {
     font-weight: 700;
     font-size: 1.5vw;
-    margin: 3vh 0 3vh 3vw;
+    margin: 1vw 0 1vw 3vw;
     color: #6a6a6a;
     transition: color 0.3s ease;
 }
@@ -80,11 +85,11 @@ body {
 .main-events-container {
     display: flex;
     justify-content: center;
-    padding: 5vh 5vw;
+    padding: 3.5vw 5vw;
 }
 
 .main-events-container .main-event {
-    height: 75vh;
+    height: 37vw;
 
     display: flex;
     justify-content: center;
@@ -116,21 +121,21 @@ body {
 .main-events-container .main-event .information .header {
     font-size: 2.8vw;
     color: #f9a027;
-    margin-top: 2vh;
-    margin-bottom: 3vh;
+    margin-top: .7vw;
+    margin-bottom: 1.5vw;
     line-height: 1.5em;
 }
 
 .main-events-container .main-event .information .description {
-    line-height: 6.3vh;
-    margin-bottom: 7vh;
+    line-height: 2em;
+    margin-bottom: 3vw;
     text-align: end;
     font-size: 1.4vw;
 }
 
 .main-events-container .main-event .information .date,
 .main-events-container .main-event .information .price {
-    margin-bottom: 2vh;
+    margin-bottom: 1.5vw;;
     margin-top: 0;
     font-weight: 700;
     font-size: 1.5vw;
@@ -139,7 +144,7 @@ body {
 
 .main-events-container .main-event .button {
     background-color: #f9b87d;
-    height: 11vh;
+    height: 5vw;
     width: 29vw;
     color: #ffffff;
     display: flex;
@@ -228,8 +233,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
 
-    margin: 10vh 0;
-    padding: 10vh 0;
+    margin: 5vw 0;
+    padding: 5vw 0;
     background-image: url("../images/circle-bg-desktop.jpg");
 }
 
@@ -237,8 +242,8 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 4vh 5vw 4vh 8vw;
-    height: 90vh;
+    padding: 3vw 5vw 3vw 8vw;
+    height: 46vw;
 }
 
 .about-container .about .description {
@@ -250,20 +255,20 @@ body {
     justify-content: space-between;
 
     color: #444444;
-    line-height: 5vh;
+    line-height: 1.5em;
     font-size: 1.5vw;
 }
 
 .about-container .about .main-photo {
-    height: 90vh;
+    height: 46vw;
 }
 
 .about-container .about .description .header {
     color: #ef902a;
     font-family: 'Playfair Display', serif;
     font-size: 3.5vw;
-    margin: 0 0 3vh 0;
-    line-height: 9vh;
+    margin: 0 0 3vw 0;
+    line-height: 1.3em;
 }
 
 .about-container .about .description .tab-text {
@@ -273,7 +278,7 @@ body {
 .about-container .about .description .middle-text {
     display: flex;
     justify-content: space-between;
-    margin: 4vh 0;
+    margin: 2.1vw 0;
     padding-right: 1vw;
     align-items: center;
 }
@@ -282,13 +287,13 @@ body {
     background-image: url("../images/ksenia-work.jpg");
     background-position-y: 20%;
     width: 20vw;
-    height: 30vh;
+    height: 14.5vw;
 }
 
 .about-container .slogan {
     align-self: center;
     font-size: 1.9vw;
-    margin-top: 3vh;
+    margin-top: 2vw;
     margin-left: 10vw;
     color: #ef902a;
 }
@@ -308,7 +313,7 @@ body {
     color: #ef902a;
     font-family: 'Playfair Display', serif;
     font-size: 3vw;
-    margin: 0 0 3vh 0;
+    margin: 0 0 2vw 0;
 }
 
 .events-container .header {
@@ -318,7 +323,7 @@ body {
 
 .gallery-container .gallery {
     align-self: center;
-    margin: 7vh 0 10vh 0;
+    margin: 4vw 0 7vw 0;
 
     display: flex;
     flex-direction: row;
@@ -354,10 +359,8 @@ body {
 }
 
 .gallery-container .gallery .photos-container {
-    /*height: 70vh;*/
-    /*display: flex;*/
 
-    height: 70vh;
+    height: 34vw;
     display: flex;
     position: relative;
     width: 67vw;
@@ -373,7 +376,7 @@ body {
 .gallery-container .gallery .photos-container #photosViewer{
     left: 0;
     position: absolute;
-    height: 70vh;
+    height: 34vw;
     display: flex;
 }
 
@@ -396,7 +399,7 @@ body {
 
 /*events*/
 .events-container {
-    padding: 10vh 5vw;
+    padding: 4vw 5vw;
     background-color: rgba(252, 214, 188, 0.2);
 }
 
@@ -410,8 +413,8 @@ body {
     display: flex;
     justify-content: center;
     width: 90vw;
-    margin-top: 10vh;
-    margin-bottom: 4vh;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
 }
 
 .events-container .events .event {
@@ -465,7 +468,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 5vh 0;
+    padding: 2vw 0;
 }
 
 .footer p {
@@ -477,16 +480,16 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 1vh;
+    margin-top: .5vw;
 }
 
 .footer .socials svg {
-    height: 7.5vh;
+    height: 4vw;
     margin: 0 .7vw;
 }
 
 .footer .socials svg:first-child {
-    height: 7vh
+    height: 3.6vw
 }
 
 .footer .socials .svg-socials {
