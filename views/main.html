@@ -20,43 +20,49 @@
             <div class="text">
                 <p class="header">Плетение мандал <br> Ojos de Dios</p>
                 <p class="description">Индейские мандалы Ojos de dios &#8211 «Глаза Бога».
-                    <br>Ищем баланс духовного и материального
-                    <br> на фестивале <a href="http://www.vremyadzen.com/" target="_blank">«ВРЕМЯ ДЗЕН»</a></p>
+                    Ищем баланс духовного и материального
+                    на фестивале <a href="http://www.vremyadzen.com/" target="_blank">«ВРЕМЯ ДЗЕН»</a></p>
                 <p class="date">Когда: &nbsp 29 октября 18:00-20:00</p>
                 <p class="price">Цена: &nbsp 200 грн</p>
             </div>
             <a class="button" href="#!event"><p>ПОДРОБНЕЕ</p></a>
         </div>
     </div>
-    <!--<div class="sub-events">-->
-    <!--<div class="sub-event cover-image-full-height hover-zoom-in top-event">-->
-    <!--<div class="date-container"><p>12.11</p></div>-->
-    <!--<div class="title-container"><p>ДЕКОР ШКАТУЛОК</p></div>-->
-    <!--</div>-->
-    <!--<div class="sub-event cover-image-full-height hover-zoom-in bottom-event">-->
-    <!--<div class="date-container"><p>05.12</p></div>-->
-    <!--<div class="title-container"><p>НАСТЕННЫЕ ЧАСЫ</p></div>-->
-    <!--</div>-->
-    <!--</div>-->
+    <div class="sub-events">
+        <div class="sub-event cover-image-full-width left-event" id="left-event"
+             ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')">
+            <div class="info">
+                <p>ДЕКОР ШКАТУЛКИ</p>
+                <p>5.11</p>
+            </div>
+        </div>
+        <div class="sub-event cover-image-full-width right-event" id="right-event"
+             ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')">
+            <div class="info">
+                <p>НАСТЕННЫЕ ЧАСЫ</p>
+                <p>10.11</p>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="about" class="about-container cover-image-full-height">
     <div class="about">
         <div class="description">
-            <p class="header">Ксения <br> Могильницкая</p>
-            <p class="tab-text">Декупаж и роспись ткани мои любимые <br> направления в творчестве.</p>
+            <p class="header">Ксения <br class="desktop"> Могильницкая</p>
+            <p class="tab-text">Декупаж и роспись ткани мои любимые <br class="desktop"> направления в творчестве.</p>
             <div class="middle-text ">
                 <div class="image cover-image-full-width"></div>
                 <p class="text">На мастер-классах я делюсь
-                    <br> своим опытом преображения
-                    <br> простых вещей в вещи
-                    <br> уникальные и эксклюзивные.</p>
+                    <br class="desktop"> своим опытом преображения
+                    <br class="desktop"> простых вещей <br class="mobile"> в вещи
+                    <br class="desktop"> уникальные и эксклюзивные.</p>
             </div>
-            <p class="tab-text" style="margin-bottom: 0">Мои ученицы раскрывают свои таланты <br>
-                и создают оригинальный декор предметов интерьера, <br> одежды и эко-сумочек.</p>
+            <p class="tab-text" style="margin-bottom: 0">Мои ученицы раскрывают свои таланты <br class="desktop">
+                и создают оригинальный декор предметов интерьера, <br class="desktop"> одежды и эко-сумочек.</p>
         </div>
         <div class="main-photo"><img class="full-height-img" src="images/ksenia-photo.jpg"></div>
     </div>
-    <div class="slogan"><p>Приходи творить и вдохновляться...</p></div>
+    <div class="slogan"><p>Приходите творить и вдохновляться...</p></div>
 </div>
 <div id="gallery" class="gallery-container" ng-controller="galleryCtrl">
     <div class="header">Как это бывает</div>

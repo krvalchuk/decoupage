@@ -39,14 +39,13 @@ app.controller("menuCtrl", function ($scope) {
 });
 
 app.controller("mainEventCtrl", function ($scope) {
-    // function updateMainEventsData(mainEventData, firstEventData, secondEventData) {
-    //    
-    // }
-    //
-    // $.getJSON('./content/main-events/closest-events.json', function (data) {
-    //    
-    //     updateMainEventsData();
-    // });
+    $scope.makeEventSmaller = function (id) {
+        $('#' + id).addClass('little-event');
+    };
+
+    $scope.makeEventOrigin = function (id) {
+        $('#' + id).removeClass('little-event');
+    };
 });
 app.controller("galleryCtrl", function ($scope) {
     var view = $("#photosViewer");
@@ -60,7 +59,7 @@ app.controller("galleryCtrl", function ($scope) {
 
     $scope.rightArrowClick = function () {
         var currentPosition = pxToVw(parseInt(view.css("left")));
-        if (currentPosition >= sliderLimit){
+        if (currentPosition >= sliderLimit) {
             view.stop(false, true).animate({left: "-=" + move}, {duration: 400});
             $("#galleryLeftArrow").removeClass("inactive");
         } else {

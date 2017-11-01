@@ -1,0 +1,77 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 680px), only screen and (min-width: 320px) and (max-width: 680px) {
+
+    .event-container .back-btn {
+        margin: 3vh 2vw 1vh 5vw;
+        font-size: 3vw;
+    }
+
+    .event-container .back-btn:before {
+        background-size: 100% 100%;
+        vertical-align: -26%;
+        width: 42px;
+        height: 39px;
+        margin-right: 2vw;
+    }
+
+    .event-container .header {
+        flex-direction: column-reverse;
+        padding: 0 13vw;
+    }
+
+    .event-container .header .info-container {
+        align-items: center;
+        margin-bottom: 4vw;
+    }
+
+    .event-container .header .info-container .title {
+        font-size: 4.9vw;
+        line-height: 2em;
+        margin-bottom: 6vw;
+    }
+
+    .event-container .header .info-container .details-container {
+        width: 89%;
+    }
+
+    .event-container .header .info-container .details-container .detail img{
+        height: 6.4vw;
+    }
+
+    .event-container .header .info-container .details-container .detail:nth-child(3) img{
+        height: 6vw;
+    }
+
+    .event-container .header .info-container .details-container .detail .details-description{
+        font-size: 3vw;
+        width: 20vw;
+    }
+
+    .event-container .header .gallery {
+        margin-bottom: 6vw;
+    }
+
+    .event-container .header .gallery .photo.main-photo {
+        height: 40vw;
+        width: 40vw;
+    }
+
+    .event-container .header .gallery .photo.side-photo,
+    .event-container .header .gallery .photo.side-photo:hover {
+        height: 16vw;
+        width: 17vw;
+    }
+
+    .event-container .event-description p {
+        line-height: 1.7em;
+        margin: 1.9vw 0;
+        font-size: 4vw;
+        width: 78%;
+    }
+
+    .event-container .sign-btn {
+        margin-top: 5vw;
+        margin-left: 20%;
+        width: 60%;
+        font-size: 4.3vw;
+    }
+}

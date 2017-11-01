@@ -1,0 +1,154 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 680px), only screen and (min-width: 320px) and (max-width: 680px) {
+
+    .menu-container .menu a {
+        font-size: 2vw;
+    }
+
+    .main-events-container .main-event .image {
+        width: 37vw;
+    }
+
+    .main-events-container .main-event .information {
+        width: 42vw;
+        padding-left: 3vw;
+    }
+
+    .main-events-container .main-event .information .header {
+        font-size: 4vw;
+        margin-bottom: .5vw;
+        margin-top: 0;
+        line-height: 1.4em;
+    }
+
+    .main-events-container .main-event .information .description {
+        font-size: 2.3vw;
+        line-height: 1.6em;
+        margin-top: 1vw;
+        width: 40vw;
+    }
+
+    .main-events-container .main-event .information .date,
+    .main-events-container .main-event .information .price {
+        display: none;
+    }
+
+    .main-events-container .main-event .button {
+        height: 7vw;
+    }
+
+    .main-events-container .main-event .information .button p {
+        font-size: 2.5vw;
+    }
+
+    .about-container .about {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding-top: 0;
+    }
+
+    .about-container .about .description {
+        align-items: center;
+        font-size: 2.3vw;
+        width: 93%;
+        margin-right: 0;
+        line-height: 1.9em;
+    }
+
+    .about-container .about .description .header {
+        font-size: 7vw;
+        text-align: center;
+        margin-bottom: 5vw;
+    }
+
+    .about-container .about br.desktop:not(.mobile) {
+        display: none;
+    }
+
+    .about-container .about br.mobile {
+        display: inline !important;
+    }
+
+    .about-container .about .description .tab-text {
+        margin-bottom: 3vw;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 0;
+        font-size: 1.4vw;
+        width: 100%;
+    }
+
+    .about-container .about .description .middle-text {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .about-container .about .description .middle-text .image {
+        width: 48vw;
+        height: 37vw;
+        margin-bottom: 2.5vw;
+    }
+
+    .about-container .about .description .middle-text p {
+        text-align: center;
+        font-size: 3.3vw;
+        width: 100%;
+        line-height: 1.4em;
+    }
+
+    .about-container .about .main-photo {
+        display: none;
+    }
+
+    .about-container .slogan {
+        font-size: 3.5vw;
+        margin-left: 23vw;
+        margin-top: 0;
+    }
+
+    .gallery-container .header, .events-container .header {
+        font-size: 5vw;
+    }
+
+    .events-container .events .event-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-container .events .event {
+        height: auto;
+        margin: 3vw 0;
+    }
+
+    .events-container .events .event .img-container,
+    .events-container .events .event .img-container:hover{
+        background-size: 100% 100%;
+        width: 35vw;
+        height: 35vw;
+        margin-bottom: 2vw;
+    }
+
+    .events-container .events .event p {
+        height: auto;
+        font-size: 4.3vw;
+        width: 70vw;
+    }
+
+    .footer p {
+        font-size: 3.3vw;
+    }
+
+    .footer .socials svg:first-child {
+        height: 6.6vw;
+    }
+
+    .footer .socials svg {
+        height: 7vw;
+    }
+
+}
