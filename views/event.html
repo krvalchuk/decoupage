@@ -2,11 +2,15 @@
     <a class="back-btn" href="#!">ВЕРНУТЬСЯ</a>
     <div class="header">
         <div class="gallery">
-            <div id="leftPhoto" class="photo side-photo cover-image-full-height" ng-click="updateMainPhoto('leftPhoto')"
+            <div id="leftPhoto"
+                 ng-class="sidePhotosVisible ? 'photo side-photo cover-image-full-height' : 'displayNone'"
+                 ng-click="updateMainPhoto('leftPhoto')"
                  ng-style="{'background-image': 'url(content/events/' + event.photosUrl + '/01.jpg)'}"></div>
             <div id="mainPhoto" class="photo main-photo cover-image-full-height"
                  ng-style="{'background-image': 'url(content/events/' + event.photosUrl + '/02.jpg)'}"></div>
-            <div id="rightPhoto" class="photo side-photo cover-image-full-height" ng-click="updateMainPhoto('rightPhoto')"
+            <div id="rightPhoto"
+                 ng-class="sidePhotosVisible ? 'photo side-photo cover-image-full-height' : 'displayNone'"
+                 ng-click="updateMainPhoto('rightPhoto')"
                  ng-style="{'background-image': 'url(content/events/' + event.photosUrl + '/03.jpg)'}"></div>
         </div>
         <div class="info-container">

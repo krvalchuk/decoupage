@@ -104,9 +104,10 @@
     <div class="events">
         <div class="event-row" ng-repeat="eventSet in eventsSets">
             <div class="event" ng-repeat="event in eventSet">
-                <div class="img-container" ng-style="{'background-image': 'url(images/' + event.imageName + ')'}">
+                <a class="img-container" ng-attr-id="{{event.id}}" href="#!event" ng-click="setEventId(event.id)"
+                     ng-style="{'background-image': 'url(content/events/' + event.id + '/main-photo.jpg)'}">
                     <!--<img src="images/{{event.imageName}}">-->
-                </div>
+                </a>
                 <p ng-bind-html="event.description | sanitize"></p>
             </div>
         </div>

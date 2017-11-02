@@ -124,7 +124,7 @@ body {
 }
 
 .main-events-container .main-event .image {
-    background-image: url(../content/main-events/main-event-image.jpg);
+    background-image: url(../content/events/main-event/main-photo.jpg);
     display: flex;
     height: 100%;
     width: 37vw;;
@@ -246,19 +246,19 @@ body {
 }
 
 .main-events-container .sub-events .sub-event.left-event {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/box-bg.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../content/events/left-event/main-photo.jpg");
 }
 
 .main-events-container .sub-events .sub-event.left-event:hover {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/box-bg.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../content/events/left-event/main-photo.jpg");
 }
 
 .main-events-container .sub-events .sub-event.right-event {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/time-bg.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../content/events/right-event/main-photo.jpg");
 }
 
 .main-events-container .sub-events .sub-event.right-event:hover {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/time-bg.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../content/events/right-event/main-photo.jpg");
 }
 
 .main-events-container .sub-events .sub-event:hover .info {

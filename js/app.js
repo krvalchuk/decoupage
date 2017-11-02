@@ -77,40 +77,49 @@ app.controller("galleryCtrl", function ($scope) {
         }
     };
 });
-app.controller("eventsCtrl", function ($scope) {
-
+app.controller("eventsCtrl", function ($scope, $rootScope) {
+    
     var eventSet1 = [
         {
-            "imageName": "tshirt-event.jpg",
+            "id": "acrylic-painting",
             "description": "Роспись ткани <br/> акриловыми красками"
         },
         {
-            "imageName": "picture-event.jpg",
+            "id": "keyholder",
             "description": "Знакомство с декупажем <br/> Ключница"
         },
         {
-            "imageName": "mandala-event.jpg",
+            "id": "mandala",
             "description": "Плетение индейской мандалы <br/> Ojos de dios"
         }
     ];
+
     var eventsSet2 = [
         {
-            "imageName": "glass-event.jpg",
+            "id": "craquelure-glass",
             "description": "Стаканчик с кракелюром"
         },
         {
-            "imageName": "clock-event.jpg",
+            "id": "acrylic-clock",
             "description": "Секреты лаковой распечатки <br/> Часы"
         },
         {
-            "imageName": "jewelbox-event.jpg",
+            "id": "jewel-box",
             "description": "Декупаж шкатулок, <br/> часов, ключниц, кухонных досок"
         }
     ];
 
     $scope.eventsSets = [eventSet1, eventsSet2];
+
+    $scope.setEventId = function (eventId) {
+        $rootScope.eventId = eventId;
+    }
 });
-app.controller("eventCtrl", function ($scope) {
+
+
+app.controller("eventCtrl", function ($scope, $rootScope) {
+    $rootScope.eventId = "mandala";
+
     $scope.event = {
         "title": "Роспись ткани <br/> акриловыми красками",
         "duration": "2-3 часа",
@@ -119,7 +128,7 @@ app.controller("eventCtrl", function ($scope) {
         "descriptionSet": ["Декорируем текстильную эко-сумку или футболку",
             "На мастер-классе мы разберем, как правильно выбирать ткань, рисунок и другие материалы для росписи. Вы научитесь применять одну из техник переноса изображения на ткань и распишите ткань акриловыми красками.",
             "Приходите и откройте в себе настоящего художника!"],
-        "photosUrl": ["rospis-akrilom"]
+        "photosUrl": [$rootScope.eventId]
     };
 
     $scope.updateMainPhoto = function (clickedId) {
@@ -130,5 +139,7 @@ app.controller("eventCtrl", function ($scope) {
 
         mainElement.css('background-image', curElement.css('background-image'));
         curElement.css('background-image', mainBg);
-    }
+    };
+
+    $scope.sidePhotosVisible = $rootScope.eventId != "craquelure-glass";
 });
