@@ -1,17 +1,17 @@
-<div class="event-container" ng-controller="eventCtrl">
+<div class="event-container" ng-controller="eventsCtrl">
     <a class="back-btn" href="#!">ВЕРНУТЬСЯ</a>
     <div class="header">
         <div class="gallery">
             <div id="leftPhoto"
-                 ng-class="sidePhotosVisible ? 'photo side-photo cover-image-full-height' : 'displayNone'"
+                 class="photo side-photo cover-image-full-height"
                  ng-click="updateMainPhoto('leftPhoto')"
-                 ng-style="{'background-image': 'url(content/events/' + event.photosUrl + '/01.jpg)'}"></div>
+                 ng-style="{'background-image': 'url(content/events/' + event.id + '/01.jpg)'}"></div>
             <div id="mainPhoto" class="photo main-photo cover-image-full-height"
-                 ng-style="{'background-image': 'url(content/events/' + event.photosUrl + '/02.jpg)'}"></div>
+                 ng-style="{'background-image': 'url(content/events/' + event.id + '/02.jpg)'}"></div>
             <div id="rightPhoto"
-                 ng-class="sidePhotosVisible ? 'photo side-photo cover-image-full-height' : 'displayNone'"
+                 class="photo side-photo cover-image-full-height"
                  ng-click="updateMainPhoto('rightPhoto')"
-                 ng-style="{'background-image': 'url(content/events/' + event.photosUrl + '/03.jpg)'}"></div>
+                 ng-style="{'background-image': 'url(content/events/' + event.id + '/03.jpg)'}"></div>
         </div>
         <div class="info-container">
             <p class="title" ng-bind-html="event.title | sanitize"></p>
@@ -22,17 +22,17 @@
                 </div>
                 <div class="detail">
                     <img src="images/price.svg">
-                    <p class="details-description">{{event.cost}} грн</p>
+                    <p class="details-description">{{event.price}} грн</p>
                 </div>
                 <div class="detail">
                     <img src="images/people.svg">
-                    <p class="details-description">{{event.audience}}</p>
+                    <p class="details-description">{{event.people}}</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="event-description">
-        <p ng-repeat="description in event.descriptionSet" ng-bind-html="description | sanitize"></p>
+        <p ng-repeat="description in event.description" ng-bind-html="description | sanitize"></p>
     </div>
     <div class="sign-btn">ЗАПИСАТЬСЯ</div>
 </div>

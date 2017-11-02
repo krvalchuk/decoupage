@@ -26,6 +26,65 @@ app.filter('range', function () {
         return input;
     };
 });
+app.controller("mainCtrl", function ($scope, $http) {
+
+    function matchEventField(fieldArr, event) {
+        if (fieldArr.length > 0) {
+            var fieldName = fieldArr[0];
+            var fieldValue = '';
+
+            if (fieldArr.length > 2) {
+                fieldValue = fieldArr.slice(1);
+            } else if (fieldArr.length == 2) {
+                fieldValue = fieldArr[1];
+            }
+            event[fieldName] = fieldValue;
+        }
+        return event;
+    }
+
+    function parseEventStr(eventStr) {
+        var event = {};
+        var fieldsStrArr = eventStr.split(/\r\n/);
+        fieldsStrArr.forEach(function (fieldStr) {
+            var fieldArr = fieldStr.split(/\t/);
+            fieldArr = fieldArr.filter(Boolean);
+            event = matchEventField(fieldArr, event);
+            var i = 0;
+        });
+        return event;
+    }
+
+    function parseEventsFile() {
+        $http.get('content/events/events.txt').then(function (response) {
+            var events = [];
+            var eventsStrArray = response.data.split("<---------->");
+            eventsStrArray.forEach(function (eventStr) {
+                var event = parseEventStr(eventStr);
+                events.push(event);
+            });
+            $scope.$parent.mainEvent = $.grep(events, function (e) {
+                return e.id == 'main-event';
+            })[0];
+            $scope.$parent.leftEvent = $.grep(events, function (e) {
+                return e.id == 'left-event';
+            })[0];
+            $scope.$parent.rightEvent = $.grep(events, function (e) {
+                return e.id == 'right-event';
+            })[0];
+            var constantEvents = $.grep(events, function (e) {
+                return e.id != 'main-event' && e.id != 'left-event' && e.id != 'right-event';
+            });
+            $scope.$parent.events = events;
+            $scope.$parent.eventsSets = [];
+            for (i = 0, j = constantEvents.length; i < j; i += 3) {
+                $scope.$parent.eventsSets.push(constantEvents.slice(i, i + 3));
+            }
+        });
+    }
+
+    parseEventsFile();
+});
 
 app.controller("menuCtrl", function ($scope) {
     $scope.activeMenuId = 'header-link';
@@ -78,57 +137,13 @@ app.controller("galleryCtrl", function ($scope) {
     };
 });
 app.controller("eventsCtrl", function ($scope, $rootScope) {
-    
-    var eventSet1 = [
-        {
-            "id": "acrylic-painting",
-            "description": "Роспись ткани <br/> акриловыми красками"
-        },
-        {
-            "id": "keyholder",
-            "description": "Знакомство с декупажем <br/> Ключница"
-        },
-        {
-            "id": "mandala",
-            "description": "Плетение индейской мандалы <br/> Ojos de dios"
-        }
-    ];
-
-    var eventsSet2 = [
-        {
-            "id": "craquelure-glass",
-            "description": "Стаканчик с кракелюром"
-        },
-        {
-            "id": "acrylic-clock",
-            "description": "Секреты лаковой распечатки <br/> Часы"
-        },
-        {
-            "id": "jewel-box",
-            "description": "Декупаж шкатулок, <br/> часов, ключниц, кухонных досок"
-        }
-    ];
-
-    $scope.eventsSets = [eventSet1, eventsSet2];
 
     $scope.setEventId = function (eventId) {
         $rootScope.eventId = eventId;
-    }
-});
-
-
-app.controller("eventCtrl", function ($scope, $rootScope) {
-    $rootScope.eventId = "mandala";
-
-    $scope.event = {
-        "title": "Роспись ткани <br/> акриловыми красками",
-        "duration": "2-3 часа",
-        "cost": "200",
-        "audience": "для взрослых и детей от 8 лет",
-        "descriptionSet": ["Декорируем текстильную эко-сумку или футболку",
-            "На мастер-классе мы разберем, как правильно выбирать ткань, рисунок и другие материалы для росписи. Вы научитесь применять одну из техник переноса изображения на ткань и распишите ткань акриловыми красками.",
-            "Приходите и откройте в себе настоящего художника!"],
-        "photosUrl": [$rootScope.eventId]
+        $rootScope.event = $.grep($scope.events, function (e) {
+            return e.id == $rootScope.eventId;
+        })[0];
+        $rootScope.$apply();
     };
 
     $scope.updateMainPhoto = function (clickedId) {
@@ -139,7 +154,8 @@ app.controller("eventCtrl", function ($scope, $rootScope) {
 
         mainElement.css('background-image', curElement.css('background-image'));
         curElement.css('background-image', mainBg);
+
     };
 
-    $scope.sidePhotosVisible = $rootScope.eventId != "craquelure-glass";
+    // $scope.sidePhotosVisible = $rootScope.eventId != "craquelure-glass";
 });

@@ -18,31 +18,33 @@
         <div class="image cover-image-full-height"></div>
         <div class="information">
             <div class="text">
-                <p class="header">Плетение мандал <br> Ojos de Dios</p>
-                <p class="description">Индейские мандалы Ojos de dios &#8211 «Глаза Бога».
-                    Ищем баланс духовного и материального
-                    на фестивале <a href="http://www.vremyadzen.com/" target="_blank">«ВРЕМЯ ДЗЕН»</a></p>
-                <p class="date">Когда: &nbsp 29 октября 18:00-20:00</p>
-                <p class="price">Цена: &nbsp 200 грн</p>
+                <p class="header" ng-bind-html="mainEvent.title | sanitize"></p>
+                <p class="description" ng-bind-html="mainEvent.shortDescription | sanitize"></p>
+                <p class="date">Когда: &nbsp {{mainEvent.date}}</p>
+                <p class="price">Цена: &nbsp {{mainEvent.price}}</p>
             </div>
-            <a class="button" href="#!event"><p>ПОДРОБНЕЕ</p></a>
+            <a class="button" href="#!event" ng-click="setEventId(mainEvent.id)"><p>ПОДРОБНЕЕ</p></a>
         </div>
     </div>
     <div class="sub-events">
-        <div class="sub-event cover-image-full-width left-event" id="left-event"
-             ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')">
+        <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width left-event' : 'displayNone'"
+             id="left-event"
+             ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')"
+             href="#!event" ng-click="setEventId(leftEvent.id)">
             <div class="info">
-                <p>ДЕКОР ШКАТУЛКИ</p>
-                <p>5.11</p>
+                <p ng-bind-html="leftEvent.title | sanitize"></p>
+                <p ng-bind-html="leftEvent.date | sanitize"></p>
             </div>
-        </div>
-        <div class="sub-event cover-image-full-width right-event" id="right-event"
-             ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')">
+        </a>
+        <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width right-event' : 'displayNone'"
+             id="right-event"
+             ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')"
+             href="#!event" ng-click="setEventId(rightEvent.id)">
             <div class="info">
-                <p>НАСТЕННЫЕ ЧАСЫ</p>
-                <p>10.11</p>
+                <p ng-bind-html="rightEvent.title | sanitize"></p>
+                <p ng-bind-html="rightEvent.date | sanitize"></p>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 <div id="about" class="about-container cover-image-full-height">
@@ -106,9 +108,8 @@
             <div class="event" ng-repeat="event in eventSet">
                 <a class="img-container" ng-attr-id="{{event.id}}" href="#!event" ng-click="setEventId(event.id)"
                      ng-style="{'background-image': 'url(content/events/' + event.id + '/main-photo.jpg)'}">
-                    <!--<img src="images/{{event.imageName}}">-->
                 </a>
-                <p ng-bind-html="event.description | sanitize"></p>
+                <p ng-bind-html="event.title | sanitize"></p>
             </div>
         </div>
     </div>
