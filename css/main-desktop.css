@@ -69,6 +69,7 @@ body {
 
 /*menu*/
 .menu-container {
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     /*border-bottom: 1px solid rgba(252,214,188, 1);*/
@@ -133,9 +134,9 @@ body {
 .main-events-container .main-event .information {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
-    width: 37vw;
+    width: 40vw;
     padding-left: 5vw;
 }
 
@@ -159,6 +160,8 @@ body {
     margin-bottom: 3vw;
     text-align: end;
     font-size: 1.4vw;
+    max-width: 43vw;
+    word-wrap: break-word;
 }
 
 .main-events-container .main-event .information .date,
@@ -171,15 +174,16 @@ body {
 }
 
 .main-events-container .main-event .button {
-    background-color: #f9b87d;
+    margin-top: 3vw;
     height: 5vw;
-    width: 29vw;
-    color: #ffffff;
+    color: #f97f47;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, color .5s ease;
     text-decoration: none;
+    padding-right: 1vw;
+    width: 60%;
 }
 
 .main-events-container .main-event .information .button p {
@@ -191,6 +195,7 @@ body {
 .event-container .sign-btn:hover {
     cursor: pointer;
     background-color: #f97f47;
+    color: #ffffff;
 }
 
 /*sub events*/
@@ -211,12 +216,14 @@ body {
     align-items: center;
     height: 21vw;
     width: 35vw;
+    text-decoration: none;
 
     transition: all 0.5s ease;
 }
 
 .main-events-container .sub-events .sub-event p:first-child {
     margin-bottom: 0;
+    line-height: 1.4em;
 }
 
 .main-events-container .sub-events .sub-event p:nth-child(2) {
@@ -241,8 +248,7 @@ body {
 }
 
 .main-events-container .sub-events .little-event .info p {
-    font-size: calc(24vw * 0.06);
-    margin: .4em 0;
+    font-size: calc(20vw * 0.06);
 }
 
 .main-events-container .sub-events .sub-event.left-event {
@@ -250,7 +256,7 @@ body {
 }
 
 .main-events-container .sub-events .sub-event.left-event:hover {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../content/events/left-event/main-photo.jpg");
+    background-image: url("../content/events/left-event/main-photo.jpg");
 }
 
 .main-events-container .sub-events .sub-event.right-event {
@@ -258,7 +264,7 @@ body {
 }
 
 .main-events-container .sub-events .sub-event.right-event:hover {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../content/events/right-event/main-photo.jpg");
+    background-image: url("../content/events/right-event/main-photo.jpg");
 }
 
 .main-events-container .sub-events .sub-event:hover .info {
@@ -266,7 +272,7 @@ body {
 }
 
 .main-events-container .sub-events .sub-event .info p {
-    transition: all .5s ease;
+    transition: font-size .3s ease, line-height .3s ease-out;
 }
 
 .main-events-container .sub-events .sub-event .info {
@@ -280,9 +286,8 @@ body {
     text-align: center;
     font-size: calc(28vw * 0.07);
     padding: 0 2vw;
-    letter-spacing: 2px;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 /*ksenia story*/
@@ -371,7 +376,8 @@ body {
     align-self: flex-start;
     color: #ef902a;
     font-family: 'Playfair Display', serif;
-    font-size: 3vw;
+    /*text-transform: uppercase;*/
+    font-size: 3.5vw;
     margin: 0 0 2vw 0;
 }
 
@@ -564,5 +570,5 @@ body {
 }
 
 .footer .socials svg:hover .svg-socials {
-    fill: #ef902a;
+    fill: #f97f47;
 }

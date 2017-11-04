@@ -5,7 +5,12 @@ app.config(function ($routeProvider) {
             templateUrl: "views/main.html"
         })
         .when("/event", {
-            templateUrl: "views/event.html"
+            templateUrl: "views/event.html",
+            controller: 'eventCtrl'
+        })
+        .when("/event/:eventId", {
+            templateUrl: "views/event.html",
+            controller: 'eventCtrl'
         });
 });
 
@@ -26,18 +31,33 @@ app.filter('range', function () {
         return input;
     };
 });
-app.controller("mainCtrl", function ($scope, $http) {
+app.controller("mainCtrl", ['$scope', '$http', '$rootScope', '$route', '$routeParams', function ($scope, $http, $routeParams) {
+
+    function removeExtraQuotes(value) {
+        if (value.length > 0 && value[0] == '"' && value[value.length - 1] == '"') {
+            value = value.slice(1, value.length - 1);
+            removeExtraQuotes(value);
+        }
+        return value;
+    }
 
     function matchEventField(fieldArr, event) {
         if (fieldArr.length > 0) {
             var fieldName = fieldArr[0];
             var fieldValue = '';
 
+            //split description paragraphs at array, not string
             if (fieldArr.length > 2) {
                 fieldValue = fieldArr.slice(1);
+                //delete quotes at the start and the end of string (specific of text-unicode converter)
+                fieldValue.forEach(function (part, index) {
+                    fieldValue[index] = removeExtraQuotes(part);
+                });
             } else if (fieldArr.length == 2) {
                 fieldValue = fieldArr[1];
+                fieldValue = removeExtraQuotes(fieldValue);
             }
+
             event[fieldName] = fieldValue;
         }
         return event;
@@ -45,12 +65,14 @@ app.controller("mainCtrl", function ($scope, $http) {
 
     function parseEventStr(eventStr) {
         var event = {};
+        //split all event info into pairs field-value
         var fieldsStrArr = eventStr.split(/\r\n/);
         fieldsStrArr.forEach(function (fieldStr) {
+            //split pair field-value in different parts
             var fieldArr = fieldStr.split(/\t/);
+            //delete all empty values in array
             fieldArr = fieldArr.filter(Boolean);
             event = matchEventField(fieldArr, event);
-            var i = 0;
         });
         return event;
     }
@@ -58,6 +80,7 @@ app.controller("mainCtrl", function ($scope, $http) {
     function parseEventsFile() {
         $http.get('content/events/events.txt').then(function (response) {
             var events = [];
+            //split all info into string info for each event
             var eventsStrArray = response.data.split("<---------->");
             eventsStrArray.forEach(function (eventStr) {
                 var event = parseEventStr(eventStr);
@@ -76,6 +99,7 @@ app.controller("mainCtrl", function ($scope, $http) {
                 return e.id != 'main-event' && e.id != 'left-event' && e.id != 'right-event';
             });
             $scope.$parent.events = events;
+            //split all constant events in groups to display them in rows by three
             $scope.$parent.eventsSets = [];
             for (i = 0, j = constantEvents.length; i < j; i += 3) {
                 $scope.$parent.eventsSets.push(constantEvents.slice(i, i + 3));
@@ -83,8 +107,23 @@ app.controller("mainCtrl", function ($scope, $http) {
         });
     }
 
+    $scope.getDateName = function (dateStr) {
+        var monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+        if (dateStr != null && dateStr != undefined) {
+            var dateArr = dateStr.split('.');
+            if (dateArr.length > 1) {
+                var day = dateArr[0];
+                var month = monthNames[dateArr[1] - 1];
+                return day + " " + month;
+            }
+        }
+        return dateStr;
+    };
+
     parseEventsFile();
-});
+
+}]);
 
 app.controller("menuCtrl", function ($scope) {
     $scope.activeMenuId = 'header-link';
@@ -136,15 +175,11 @@ app.controller("galleryCtrl", function ($scope) {
         }
     };
 });
-app.controller("eventsCtrl", function ($scope, $rootScope) {
 
-    $scope.setEventId = function (eventId) {
-        $rootScope.eventId = eventId;
-        $rootScope.event = $.grep($scope.events, function (e) {
-            return e.id == $rootScope.eventId;
-        })[0];
-        $rootScope.$apply();
-    };
+app.controller("eventCtrl", function ($scope, $routeParams) {
+    $scope.event = $.grep($scope.events, function (e) {
+        return e.id == $routeParams.eventId;
+    })[0];
 
     $scope.updateMainPhoto = function (clickedId) {
         var curElement = $("#" + clickedId);
@@ -156,6 +191,4 @@ app.controller("eventsCtrl", function ($scope, $rootScope) {
         curElement.css('background-image', mainBg);
 
     };
-
-    // $scope.sidePhotosVisible = $rootScope.eventId != "craquelure-glass";
 });

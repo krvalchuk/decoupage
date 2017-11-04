@@ -1,4 +1,4 @@
-<div class="event-container" ng-controller="eventsCtrl">
+<div class="event-container" ng-controller="eventCtrl">
     <a class="back-btn" href="#!">ВЕРНУТЬСЯ</a>
     <div class="header">
         <div class="gallery">
@@ -15,6 +15,7 @@
         </div>
         <div class="info-container">
             <p class="title" ng-bind-html="event.title | sanitize"></p>
+            <p class="date">{{getDateName(event.date)}}</p>
             <div class="details-container">
                 <div class="detail">
                     <img src="images/clock.svg">
@@ -22,7 +23,7 @@
                 </div>
                 <div class="detail">
                     <img src="images/price.svg">
-                    <p class="details-description">{{event.price}} грн</p>
+                    <p class="details-description">{{event.price}}</p>
                 </div>
                 <div class="detail">
                     <img src="images/people.svg">
@@ -34,5 +35,6 @@
     <div class="event-description">
         <p ng-repeat="description in event.description" ng-bind-html="description | sanitize"></p>
     </div>
-    <div class="sign-btn">ЗАПИСАТЬСЯ</div>
+    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfTpqknilmUIC90HfnfJSifpHZe34a5j0WrtUdfRAsoIPt1xQ/viewform"
+       class="sign-btn">ЗАПИСАТЬСЯ</a>
 </div>

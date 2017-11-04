@@ -1,4 +1,4 @@
-<div class="menu-container" ng-controller="menuCtrl">
+<div class="menu-container" id="menu" ng-controller="menuCtrl">
     <div class="logo"><img src="images/logo.svg"></div>
     <div class="menu">
         <a id="header-link" ng-click="scrollTo('header')"
@@ -20,26 +20,26 @@
             <div class="text">
                 <p class="header" ng-bind-html="mainEvent.title | sanitize"></p>
                 <p class="description" ng-bind-html="mainEvent.shortDescription | sanitize"></p>
-                <p class="date">Когда: &nbsp {{mainEvent.date}}</p>
+                <p class="date">Когда: &nbsp {{getDateName(mainEvent.date)}}</p>
                 <p class="price">Цена: &nbsp {{mainEvent.price}}</p>
             </div>
-            <a class="button" href="#!event" ng-click="setEventId(mainEvent.id)"><p>ПОДРОБНЕЕ</p></a>
+            <a class="button" ng-href="#!event/main-event"><p>ПОДРОБНЕЕ</p></a>
         </div>
     </div>
     <div class="sub-events">
         <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width left-event' : 'displayNone'"
-             id="left-event"
-             ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')"
-             href="#!event" ng-click="setEventId(leftEvent.id)">
+           id="left-event"
+           ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')"
+           ng-href="#!event/left-event">
             <div class="info">
                 <p ng-bind-html="leftEvent.title | sanitize"></p>
                 <p ng-bind-html="leftEvent.date | sanitize"></p>
             </div>
         </a>
         <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width right-event' : 'displayNone'"
-             id="right-event"
-             ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')"
-             href="#!event" ng-click="setEventId(rightEvent.id)">
+           id="right-event"
+           ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')"
+           ng-href="#!event/right-event">
             <div class="info">
                 <p ng-bind-html="rightEvent.title | sanitize"></p>
                 <p ng-bind-html="rightEvent.date | sanitize"></p>
@@ -101,13 +101,13 @@
         </div>
     </div>
 </div>
-<div id="events" class="events-container" ng-controller="eventsCtrl">
+<div id="events" class="events-container">
     <div class="header">Мастер-классы</div>
     <div class="events">
         <div class="event-row" ng-repeat="eventSet in eventsSets">
             <div class="event" ng-repeat="event in eventSet">
-                <a class="img-container" ng-attr-id="{{event.id}}" href="#!event" ng-click="setEventId(event.id)"
-                     ng-style="{'background-image': 'url(content/events/' + event.id + '/main-photo.jpg)'}">
+                <a class="img-container" ng-attr-id="{{event.id}}" ng-href="#!event/{{event.id}}" ng-click="setEventId(event.id)"
+                   ng-style="{'background-image': 'url(content/events/' + event.id + '/main-photo.jpg)'}">
                 </a>
                 <p ng-bind-html="event.title | sanitize"></p>
             </div>
@@ -117,16 +117,20 @@
 <div id="footer" class="footer">
     <p>E-mail: sales@parmax.kiev.ua</p>
     <div class="socials">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30" x="0px" y="0px">
-            <path class="svg-socials"
-                  d="M7.42,14.08H8.77v6.76a1.42,1.42,0,0,0,1.42,1.41h2.68a1.42,1.42,0,0,0,1.43-1.41V14.08h1.35a1.64,1.64,0,0,0,1.34-1l.92-1.81a.49.49,0,0,0,0-.1A1.4,1.4,0,0,0,17.7,10a1.42,1.42,0,0,0-1.12-.54H14.3V6.82h2.27A1.42,1.42,0,0,0,18,5.42V3.16a1.42,1.42,0,0,0-1.42-1.41H13.8c-3.38,0-5,2.09-5,6.39V9.45H7.42A1.42,1.42,0,0,0,6,10.86v1.81A1.42,1.42,0,0,0,7.42,14.08ZM7,10.86a.42.42,0,0,1,.42-.41H9.27a.5.5,0,0,0,.5-.5V8.14c0-3.78,1.2-5.39,4-5.39h2.77a.42.42,0,0,1,.42.41V5.42a.42.42,0,0,1-.42.41H13.8a.5.5,0,0,0-.5.5V10a.5.5,0,0,0,.5.5h2.77a.43.43,0,0,1,.34.16.39.39,0,0,1,.08.3l-.89,1.74c-.16.29-.37.43-.46.43H13.8a.5.5,0,0,0-.5.5v7.26a.42.42,0,0,1-.43.41H10.2a.42.42,0,0,1-.42-.41V13.58a.5.5,0,0,0-.5-.5H7.42A.42.42,0,0,1,7,12.67Z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30" x="0px" y="0px">
-            <g class="svg-socials">
-                <path d="M16,3.5H8A4.5,4.5,0,0,0,3.5,8v8A4.5,4.5,0,0,0,8,20.5h8A4.5,4.5,0,0,0,20.5,16V8A4.5,4.5,0,0,0,16,3.5ZM19.5,16A3.5,3.5,0,0,1,16,19.5H8A3.5,3.5,0,0,1,4.5,16V8A3.5,3.5,0,0,1,8,4.5h8A3.5,3.5,0,0,1,19.5,8Z"/>
-                <path d="M12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"/>
-                <path d="M16.5,6.5a1,1,0,1,0,1,1A1,1,0,0,0,16.5,6.5Zm0,1h0Z"/>
-            </g>
-        </svg>
+        <a target="_blank" href="https://www.facebook.com/beautiful.solutions.of.ordinary.things/?ref=profile_intro_card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30" x="0px" y="0px">
+                <path class="svg-socials"
+                      d="M7.42,14.08H8.77v6.76a1.42,1.42,0,0,0,1.42,1.41h2.68a1.42,1.42,0,0,0,1.43-1.41V14.08h1.35a1.64,1.64,0,0,0,1.34-1l.92-1.81a.49.49,0,0,0,0-.1A1.4,1.4,0,0,0,17.7,10a1.42,1.42,0,0,0-1.12-.54H14.3V6.82h2.27A1.42,1.42,0,0,0,18,5.42V3.16a1.42,1.42,0,0,0-1.42-1.41H13.8c-3.38,0-5,2.09-5,6.39V9.45H7.42A1.42,1.42,0,0,0,6,10.86v1.81A1.42,1.42,0,0,0,7.42,14.08ZM7,10.86a.42.42,0,0,1,.42-.41H9.27a.5.5,0,0,0,.5-.5V8.14c0-3.78,1.2-5.39,4-5.39h2.77a.42.42,0,0,1,.42.41V5.42a.42.42,0,0,1-.42.41H13.8a.5.5,0,0,0-.5.5V10a.5.5,0,0,0,.5.5h2.77a.43.43,0,0,1,.34.16.39.39,0,0,1,.08.3l-.89,1.74c-.16.29-.37.43-.46.43H13.8a.5.5,0,0,0-.5.5v7.26a.42.42,0,0,1-.43.41H10.2a.42.42,0,0,1-.42-.41V13.58a.5.5,0,0,0-.5-.5H7.42A.42.42,0,0,1,7,12.67Z"/>
+            </svg>
+        </a>
+        <a target="_blank" href="https://www.instagram.com/prettiness_ksenia/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 30" x="0px" y="0px">
+                <g class="svg-socials">
+                    <path d="M16,3.5H8A4.5,4.5,0,0,0,3.5,8v8A4.5,4.5,0,0,0,8,20.5h8A4.5,4.5,0,0,0,20.5,16V8A4.5,4.5,0,0,0,16,3.5ZM19.5,16A3.5,3.5,0,0,1,16,19.5H8A3.5,3.5,0,0,1,4.5,16V8A3.5,3.5,0,0,1,8,4.5h8A3.5,3.5,0,0,1,19.5,8Z"/>
+                    <path d="M12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"/>
+                    <path d="M16.5,6.5a1,1,0,1,0,1,1A1,1,0,0,0,16.5,6.5Zm0,1h0Z"/>
+                </g>
+            </svg>
+        </a>
     </div>
 </div>
