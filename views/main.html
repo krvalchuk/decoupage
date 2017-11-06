@@ -28,6 +28,7 @@
     </div>
     <div class="sub-events">
         <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width left-event' : 'displayNone'"
+           ng-style="rightEvent.isVisible==='no' && { 'align-self' : 'center'} && { 'margin-left' : '21.5vw'}"
            id="left-event"
            ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')"
            ng-href="#!event/left-event">
@@ -36,7 +37,8 @@
                 <p ng-bind-html="leftEvent.date | sanitize"></p>
             </div>
         </a>
-        <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width right-event' : 'displayNone'"
+        <a ng-class="rightEvent.isVisible==='yes' ? 'sub-event cover-image-full-width right-event' : 'displayNone'"
+           ng-style="leftEvent.isVisible==='no' && { 'align-self' : 'center'} && { 'margin-left' : '21.5vw'}"
            id="right-event"
            ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')"
            ng-href="#!event/right-event">
@@ -115,6 +117,9 @@
     </div>
 </div>
 <div id="footer" class="footer">
+    <div class="valchuk-sign">
+        <a target="_blank" href="https://www.linkedin.com/in/kristina-valchuk-97152aab/">Valchuk</a>
+    </div>
     <p>E-mail: sales@parmax.kiev.ua</p>
     <div class="socials">
         <a target="_blank" href="https://www.facebook.com/beautiful.solutions.of.ordinary.things/?ref=profile_intro_card">

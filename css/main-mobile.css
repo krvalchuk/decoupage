@@ -127,7 +127,7 @@
         align-self: center;
     }
 
-    .events-container .header{
+    .events-container .header {
         margin-right: 0;
     }
 
@@ -142,7 +142,7 @@
     }
 
     .events-container .events .event .img-container,
-    .events-container .events .event .img-container:hover{
+    .events-container .events .event .img-container:hover {
         background-size: 100% 100%;
         width: 35vw;
         height: 35vw;
@@ -159,7 +159,7 @@
         font-size: 3.3vw;
     }
 
-    .footer .socials svg:first-child {
+    .footer .socials a:first-child svg {
         height: 6.6vw;
     }
 
@@ -167,4 +167,12 @@
         height: 7vw;
     }
 
+    .footer .valchuk-sign {
+        margin-left: 4vw;
+        margin-top: 11vw;
+    }
+
+    .footer .valchuk-sign a{
+        font-size: 5vw;
+    }
 }

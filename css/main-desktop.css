@@ -14,6 +14,21 @@
     .events-container .events .event .img-container:hover + p {
         color: #ef902a;
     }
+
+    .footer .valchuk-sign a {
+        font-size: 3vw;
+    }
+
+    .footer .valchuk-sign {
+        margin-left: 3vw;
+        margin-top: 4.3vw;
+    }
+}
+
+@font-face {
+    font-family: 'Flash Back';
+    src: url('../resources/flash-back-font.ttf');
+    src: local('Flash Back - Demo'), url('../resources/flash-back-font.ttf') format('truetype');
 }
 
 body {
@@ -199,6 +214,11 @@ body {
 }
 
 /*sub events*/
+.centerAlign{
+    align-self: center;
+    margin-left: 21vw;
+}
+
 .main-events-container .sub-events {
     margin-top: 9vw;
     width: 80vw;
@@ -424,11 +444,11 @@ body {
     width: 3vw;
 }
 
-.gallery-container .gallery .arrow.left:not(.inactive):hover{
+.gallery-container .gallery .arrow.left:not(.inactive):hover {
     margin-left: -1vw;
 }
 
-.gallery-container .gallery .arrow.right:not(.inactive):hover{
+.gallery-container .gallery .arrow.right:not(.inactive):hover {
     margin-right: -1vw;
 }
 
@@ -556,7 +576,7 @@ body {
     margin: 0 .7vw;
 }
 
-.footer .socials svg:first-child {
+.footer .socials a:first-child svg{
     height: 3.6vw
 }
 
@@ -571,4 +591,20 @@ body {
 
 .footer .socials svg:hover .svg-socials {
     fill: #f97f47;
+}
+
+.footer .valchuk-sign {
+    position: absolute;
+    align-self: flex-start;
+}
+
+.footer .valchuk-sign a:hover {
+    color: #26a69a
+}
+
+.footer .valchuk-sign a {
+    margin: 0;
+    color: #444444;
+    text-decoration: none;
+    font-family: "Flash Back";
 }
