@@ -1,0 +1,55 @@
+.animateFadeIn {
+    -webkit-animation: fadein 2.5s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2.5s ease-out forwards; /* Firefox < 16 */
+    -ms-animation: fadein 2.5s ease-out forwards; /* Internet Explorer */
+    -o-animation: fadein 2.5s ease-out forwards; /* Opera < 12.1 */
+    animation: fadein 2.5s ease-out forwards;
+}
+
+.animateLeftHeader{
+    -webkit-animation: leftHeaderSlide 1.5s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: leftHeaderSlide 1.5s ease-out forwards; /* Firefox < 16 */
+    -ms-animation: leftHeaderSlide 1.5s ease-out forwards; /* Internet Explorer */
+    -o-animation: leftHeaderSlide 1.5s ease-out forwards; /* Opera < 12.1 */
+    animation: leftHeaderSlide 1.5s ease-out forwards;
+}
+
+.animateRightHeader{
+    -webkit-animation: rightHeaderSlide 1s ease-out 1.5s forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: rightHeaderSlide 1s ease-out 1.5s forwards; /* Firefox < 16 */
+    -ms-animation: rightHeaderSlide 1s ease-out 1.5s forwards; /* Internet Explorer */
+    -o-animation: rightHeaderSlide 1s ease-out 1.5s forwards; /* Opera < 12.1 */
+    animation: rightHeaderSlide 1s ease-out 1.5s forwards;
+}
+
+.animateLeft {
+    -webkit-animation: leftSlide 1s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: leftSlide 1s ease-out forwards; /* Firefox < 16 */
+    -ms-animation: leftSlide 1s ease-out forwards; /* Internet Explorer */
+    -o-animation: leftSlide 1s ease-out forwards; /* Opera < 12.1 */
+    animation: leftSlide 1s ease-out forwards;
+}
+
+.animateDeepLeft {
+    -webkit-animation: leftDeepSlide 1s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: leftDeepSlide 1s ease-out forwards; /* Firefox < 16 */
+    -ms-animation: leftDeepSlide 1s ease-out forwards; /* Internet Explorer */
+    -o-animation: leftDeepSlide 1s ease-out forwards; /* Opera < 12.1 */
+    animation: leftDeepSlide 1s ease-out forwards;
+}
+
+.animateRight {
+    -webkit-animation: rightSlide 1s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: rightSlide 1s ease-out forwards; /* Firefox < 16 */
+    -ms-animation: rightSlide 1s ease-out forwards; /* Internet Explorer */
+    -o-animation: rightSlide 1s ease-out forwards; /* Opera < 12.1 */
+    animation: rightSlide 1s ease-out forwards;
+}
+
+.animateDeepRight {
+    -webkit-animation: rightDeepSlide 1s ease-out forwards; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: rightDeepSlide 1s ease-out forwards; /* Firefox < 16 */
+    -ms-animation: rightDeepSlide 1s ease-out forwards; /* Internet Explorer */
+    -o-animation: rightDeepSlide 1s ease-out forwards; /* Opera < 12.1 */
+    animation: rightDeepSlide 1s ease-out forwards;
+}

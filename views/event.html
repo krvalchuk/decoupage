@@ -1,4 +1,4 @@
-<div class="event-container" ng-controller="eventCtrl">
+<div class="event-container fadeInOnLoad" ng-controller="eventCtrl">
     <a class="back-btn" href="#!">ВЕРНУТЬСЯ</a>
     <div class="header">
         <div class="gallery">
@@ -36,5 +36,5 @@
         <p ng-repeat="description in event.description" ng-bind-html="description | sanitize"></p>
     </div>
     <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfTpqknilmUIC90HfnfJSifpHZe34a5j0WrtUdfRAsoIPt1xQ/viewform"
-       class="sign-btn">ЗАПИСАТЬСЯ</a>
+       class="sign-btn fadeInOnView">ЗАПИСАТЬСЯ</a>
 </div>

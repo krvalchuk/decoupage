@@ -253,6 +253,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    opacity: 0;
 }
 
 .main-events-container .sub-events .sub-event {
@@ -329,6 +331,11 @@ body {
     margin: 5vw 0;
     padding: 5vw 0;
     background-image: url("../images/circle-bg-desktop.jpg");
+
+    -webkit-background-size: auto 101%;
+    -moz-background-size: auto 101%;
+    -o-background-size: auto 101%;
+    background-size: auto 101%;
 }
 
 .about-container .about {
@@ -389,6 +396,7 @@ body {
     margin-top: 2vw;
     margin-left: 10vw;
     color: #ef902a;
+    opacity: 0;
 }
 
 /*gallery*/
@@ -431,6 +439,7 @@ body {
 }
 
 .gallery-container .gallery .arrow {
+    opacity: 0;
     width: 2vw;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -480,6 +489,8 @@ body {
     width: 67vw;
     justify-content: center;
     overflow: hidden;
+
+    opacity: 0;
 }
 
 .gallery-container .gallery .photos-container #photosViewer .photoSet {
@@ -538,6 +549,7 @@ body {
     align-items: center;
     height: 20.5vw;
     width: 30vw;
+    opacity: 0;
 }
 
 .events-container .events .event .img-container {

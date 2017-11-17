@@ -14,7 +14,7 @@
     </div>
 </div>
 <div id="header" class="main-events-container">
-    <div class="main-event">
+    <div class="main-event fadeInOnLoad">
         <div class="image cover-image-full-height"></div>
         <div class="information">
             <div class="text">
@@ -26,8 +26,8 @@
             <a class="button" ng-href="#!event/main-event"><p>ПОДРОБНЕЕ</p></a>
         </div>
     </div>
-    <div class="bg-pattern"></div>
-    <div class="sub-events">
+    <div class="bg-pattern fadeInOnView"></div>
+    <div class="sub-events fadeInOnView">
         <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event left-event' : 'displayNone'"
            ng-style="rightEvent.isVisible==='no' && { 'align-self' : 'center'} && { 'margin-left' : '21.5vw'}"
            id="left-event"
@@ -67,12 +67,12 @@
         </div>
         <div class="main-photo"><img class="full-height-img" src="images/ksenia-photo.jpg"></div>
     </div>
-    <div class="slogan"><p>Приходите творить и вдохновляться...</p></div>
+    <div class="slogan fadeInOnView"><p>Приходите творить и вдохновляться...</p></div>
 </div>
 <div id="gallery" class="gallery-container" ng-controller="galleryCtrl">
     <div class="header">Как это бывает</div>
     <div class="gallery">
-        <div class="arrow inactive left" id="galleryLeftArrow" ng-click="leftArrowClick()">
+        <div class="arrow inactive left leftOnView" id="galleryLeftArrow" ng-click="leftArrowClick()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
                 <g>
                     <path class="svg-arrow"
@@ -80,7 +80,7 @@
                 </g>
             </svg>
         </div>
-        <div class="photos-container">
+        <div class="photos-container fadeInOnView">
             <div id="photosViewer">
                 <div class="photoSet" ng-repeat="i in  [] | range:4">
                     <div class="main-photo cover-image-full-height"
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="arrow right" id="galleryRightArrow" ng-click="rightArrowClick()">
+        <div class="arrow right rightOnView" id="galleryRightArrow" ng-click="rightArrowClick()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 68">
                 <g>
                     <path class="svg-arrow"
@@ -108,7 +108,7 @@
     <div class="header">Мастер-классы</div>
     <div class="events">
         <div class="event-row" ng-repeat="eventSet in eventsSets">
-            <div class="event" ng-repeat="event in eventSet">
+            <div class="event fadeInOnView" ng-repeat="event in eventSet">
                 <a class="img-container" ng-attr-id="{{event.id}}" ng-href="#!event/{{event.id}}" ng-click="setEventId(event.id)"
                    ng-style="{'background-image': 'url(content/events/' + event.id + '/main-photo.jpg)'}">
                 </a>
