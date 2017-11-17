@@ -136,15 +136,6 @@ app.controller("menuCtrl", function ($scope) {
     }
 });
 
-app.controller("mainEventCtrl", function ($scope) {
-    $scope.makeEventSmaller = function (id) {
-        $('#' + id).addClass('little-event');
-    };
-
-    $scope.makeEventOrigin = function (id) {
-        $('#' + id).removeClass('little-event');
-    };
-});
 app.controller("galleryCtrl", function ($scope) {
     var view = $("#photosViewer");
     var move = "72vw";

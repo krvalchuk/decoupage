@@ -13,7 +13,7 @@
            ng-class="{'active': activeMenuId == 'footer-link'}">КОНТАКТЫ</a>
     </div>
 </div>
-<div id="header" class="main-events-container" ng-controller="mainEventCtrl">
+<div id="header" class="main-events-container">
     <div class="main-event">
         <div class="image cover-image-full-height"></div>
         <div class="information">
@@ -26,22 +26,23 @@
             <a class="button" ng-href="#!event/main-event"><p>ПОДРОБНЕЕ</p></a>
         </div>
     </div>
+    <div class="bg-pattern"></div>
     <div class="sub-events">
-        <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event cover-image-full-width left-event' : 'displayNone'"
+        <a ng-class="leftEvent.isVisible==='yes' ? 'sub-event left-event' : 'displayNone'"
            ng-style="rightEvent.isVisible==='no' && { 'align-self' : 'center'} && { 'margin-left' : '21.5vw'}"
            id="left-event"
-           ng-mouseover="makeEventSmaller('right-event')" ng-mouseleave="makeEventOrigin('right-event')"
            ng-href="#!event/left-event">
+            <img src="content/events/left-event/main-photo.jpg">
             <div class="info">
                 <p ng-bind-html="leftEvent.title | sanitize"></p>
                 <p ng-bind-html="leftEvent.date | sanitize"></p>
             </div>
         </a>
-        <a ng-class="rightEvent.isVisible==='yes' ? 'sub-event cover-image-full-width right-event' : 'displayNone'"
+        <a ng-class="rightEvent.isVisible==='yes' ? 'sub-event right-event' : 'displayNone'"
            ng-style="leftEvent.isVisible==='no' && { 'align-self' : 'center'} && { 'margin-left' : '21.5vw'}"
            id="right-event"
-           ng-mouseover="makeEventSmaller('left-event')" ng-mouseleave="makeEventOrigin('left-event')"
            ng-href="#!event/right-event">
+            <img src="content/events/right-event/main-photo.jpg">
             <div class="info">
                 <p ng-bind-html="rightEvent.title | sanitize"></p>
                 <p ng-bind-html="rightEvent.date | sanitize"></p>

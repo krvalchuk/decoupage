@@ -54,6 +54,9 @@ body {
 }
 
 .hover-zoom-in {
+    -webkit-transition: background-size .3s linear;
+    -moz-transition: background-size .3s linear;
+    -o-transition: background-size .3s linear;
     transition: background-size .3s linear;
     cursor: pointer;
 }
@@ -111,6 +114,9 @@ body {
     font-size: 1.5vw;
     margin: 1vw 0 1vw 3vw;
     color: #6a6a6a;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
 
@@ -137,6 +143,9 @@ body {
 
     display: flex;
     justify-content: center;
+    margin-right: -3vw;
+
+    z-index: 100;
 }
 
 .main-events-container .main-event .image {
@@ -153,6 +162,8 @@ body {
     align-items: flex-end;
     width: 40vw;
     padding-left: 5vw;
+    padding-right: 4vw;
+    background-color: #ffffff;
 }
 
 .main-events-container .main-event .information .text {
@@ -195,6 +206,9 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    -webkit-transition: background-color 0.5s ease, color .5s ease;
+    -moz-transition: background-color 0.5s ease, color .5s ease;
+    -o-transition: background-color 0.5s ease, color .5s ease;
     transition: background-color 0.5s ease, color .5s ease;
     text-decoration: none;
     padding-right: 1vw;
@@ -213,20 +227,32 @@ body {
     color: #ffffff;
 }
 
+/*background pattern*/
+.main-events-container .bg-pattern {
+    z-index: -100;
+    width: 100vw;
+    height: 70vw;
+    position: absolute;
+    top: 35vw;
+    background-image: url("../images/regal-pattern.png");
+    background-size: contain;
+
+}
+
 /*sub events*/
-.centerAlign{
+.centerAlign {
     align-self: center;
     margin-left: 21vw;
 }
 
 .main-events-container .sub-events {
-    margin-top: 9vw;
-    width: 80vw;
+    margin-top: 8vw;
+    height: 21vw;
+    width: 78vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 21vw;
 }
 
 .main-events-container .sub-events .sub-event {
@@ -234,80 +260,63 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 21vw;
-    width: 35vw;
+    height: 20vw;
+    width: 32vw;
     text-decoration: none;
+    z-index: 100;
 
-    transition: all 0.5s ease;
-}
+    background-color: #ffffff;
 
-.main-events-container .sub-events .sub-event p:first-child {
-    margin-bottom: 0;
-    line-height: 1.4em;
-}
-
-.main-events-container .sub-events .sub-event p:nth-child(2) {
-    margin-top: .7em;
-}
-
-.main-events-container .sub-events .sub-event:nth-child(2) {
-    /*margin-left: 12vw;*/
-}
-
-.main-events-container .sub-events .sub-event:hover {
-    cursor: pointer;
-    height: 23vw;
-    width: 37vw;
-    margin: 0 3vw;
-}
-
-.main-events-container .sub-events .little-event {
-    height: 13vw;
-    width: 24vw;
-    margin: 0 4vw;
-}
-
-.main-events-container .sub-events .little-event .info p {
-    font-size: calc(20vw * 0.06);
-}
-
-.main-events-container .sub-events .sub-event.left-event {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../content/events/left-event/main-photo.jpg");
-}
-
-.main-events-container .sub-events .sub-event.left-event:hover {
-    background-image: url("../content/events/left-event/main-photo.jpg");
-}
-
-.main-events-container .sub-events .sub-event.right-event {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../content/events/right-event/main-photo.jpg");
-}
-
-.main-events-container .sub-events .sub-event.right-event:hover {
-    background-image: url("../content/events/right-event/main-photo.jpg");
-}
-
-.main-events-container .sub-events .sub-event:hover .info {
-    opacity: 0;
-}
-
-.main-events-container .sub-events .sub-event .info p {
-    transition: font-size .3s ease, line-height .3s ease-out;
 }
 
 .main-events-container .sub-events .sub-event .info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 3px solid #ffffff;
-    color: #ffffff;
-    width: 50%;
+
+    font-family: 'Roboto', sans-serif;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444444;
+    width: 90%;
     height: 70%;
     text-align: center;
-    font-size: calc(28vw * 0.07);
-    padding: 0 2vw;
+    font-size: 1.8vw;
+    line-height: 2.8vw;
+
+    -webkit-transition: color 1s ease, border 1s ease;
+    -moz-transition: color 1s ease, border 1s ease;
+    -o-transition: color 1s ease, border 1s ease;
+    transition: color 1s ease, border 1s ease;
+}
+
+.main-events-container .sub-events .sub-event p:first-child {
+    margin: 2vw 2vw 0 2vw;
+}
+
+.main-events-container .sub-events .sub-event p:nth-child(2) {
+    margin-top: .7em;
+}
+
+.main-events-container .sub-events .sub-event img{
+    width: 32vw;
+    height: 20vw;
+    position: absolute;
+    z-index: -50;
+    opacity: 0;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+.main-events-container .sub-events .sub-event:hover img{
     opacity: 1;
-    transition: opacity 0.5s ease;
+}
+
+.main-events-container .sub-events .sub-event:hover .info{
+    color: #ffffff;
 }
 
 /*ksenia story*/
@@ -423,6 +432,9 @@ body {
 
 .gallery-container .gallery .arrow {
     width: 2vw;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -431,6 +443,9 @@ body {
     stroke: #7c7c7c;
     stroke-miterlimit: 10;
 
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -536,6 +551,9 @@ body {
     -o-background-size: 15vw 15vw;
     background-size: 15vw 15vw;
 
+    -webkit-transition: height 0.3s linear, width 0.3s linear, margin 0.3s linear;
+    -moz-transition: height 0.3s linear, width 0.3s linear, margin 0.3s linear;
+    -o-transition: height 0.3s linear, width 0.3s linear, margin 0.3s linear;
     transition: height 0.3s linear, width 0.3s linear, margin 0.3s linear;
 }
 
@@ -547,6 +565,9 @@ body {
     color: #444444;
     margin: 0;
 
+    -webkit-transition: color 0.3s linear;
+    -moz-transition: color 0.3s linear;
+    -o-transition: color 0.3s linear;
     transition: color 0.3s linear;
 }
 
@@ -576,12 +597,15 @@ body {
     margin: 0 .7vw;
 }
 
-.footer .socials a:first-child svg{
+.footer .socials a:first-child svg {
     height: 3.6vw
 }
 
 .footer .socials .svg-socials {
     fill: #3a3a3a;
+    -webkit-transition: fill 0.3s ease;
+    -moz-transition: fill 0.3s ease;
+    -o-transition: fill 0.3s ease;
     transition: fill 0.3s ease;
 }
 
