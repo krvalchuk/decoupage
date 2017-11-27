@@ -234,8 +234,9 @@ body {
     height: 70vw;
     position: absolute;
     top: 35vw;
-    background-image: url("../images/regal-pattern.png");
-    background-size: contain;
+    background-color: rgba(252, 214, 188, 0.15);
+    /*background-image: url("../images/regal-pattern.png");*/
+    /*background-size: contain;*/
 
 }
 
@@ -246,7 +247,8 @@ body {
 }
 
 .main-events-container .sub-events {
-    margin-top: 8vw;
+    margin-top: 6vw;
+    margin-bottom: 3vw;
     height: 21vw;
     width: 78vw;
     display: flex;
@@ -266,8 +268,11 @@ body {
     width: 32vw;
     text-decoration: none;
     z-index: 100;
+    /*border: 1px solid #444444;*/
 
     background-color: #ffffff;
+    /*background-size: 100% auto;*/
+    /*background-image: url("../images/regal-pattern.png");*/
 
 }
 
@@ -284,7 +289,7 @@ body {
     width: 90%;
     height: 70%;
     text-align: center;
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     line-height: 2.8vw;
 
     -webkit-transition: color 1s ease, border 1s ease;
@@ -301,7 +306,7 @@ body {
     margin-top: .7em;
 }
 
-.main-events-container .sub-events .sub-event img{
+.main-events-container .sub-events .sub-event img {
     width: 32vw;
     height: 20vw;
     position: absolute;
@@ -313,11 +318,11 @@ body {
     transition: all 1s linear;
 }
 
-.main-events-container .sub-events .sub-event:hover img{
+.main-events-container .sub-events .sub-event:hover img {
     opacity: 1;
 }
 
-.main-events-container .sub-events .sub-event:hover .info{
+.main-events-container .sub-events .sub-event:hover .info {
     color: #ffffff;
 }
 
@@ -328,14 +333,15 @@ body {
     flex-direction: column;
     justify-content: space-between;
 
-    margin: 5vw 0;
+    /*margin: 5vw 0;*/
     padding: 5vw 0;
-    background-image: url("../images/circle-bg-desktop.jpg");
+    background-color: #ffffff;
+    /*background-image: url("../images/circle-bg-desktop.jpg");*/
 
-    -webkit-background-size: auto 101%;
-    -moz-background-size: auto 101%;
-    -o-background-size: auto 101%;
-    background-size: auto 101%;
+    /*-webkit-background-size: auto 101%;*/
+    /*-moz-background-size: auto 101%;*/
+    /*-o-background-size: auto 101%;*/
+    /*background-size: auto 101%;*/
 }
 
 .about-container .about {
@@ -400,12 +406,16 @@ body {
 }
 
 /*gallery*/
+.gallery-container{
+    background-color: rgba(252, 214, 188, 0.2);
+}
+
 .gallery-container,
 .events-container {
     display: flex;
     flex-direction: column;
 
-    padding: 0 5vw;
+    padding: 5vw;
 }
 
 .gallery-container .header,
@@ -433,13 +443,14 @@ body {
 
     display: flex;
     flex-direction: row;
-    width: 80vw;
+    width: 82vw;
     justify-content: space-between;
     align-items: center;
 }
 
 .gallery-container .gallery .arrow {
     opacity: 0;
+    margin: 0 1vw;
     width: 2vw;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -466,14 +477,7 @@ body {
 .gallery-container .gallery .arrow:not(.inactive):hover {
     cursor: pointer;
     width: 3vw;
-}
-
-.gallery-container .gallery .arrow.left:not(.inactive):hover {
-    margin-left: -1vw;
-}
-
-.gallery-container .gallery .arrow.right:not(.inactive):hover {
-    margin-right: -1vw;
+    margin: 0;
 }
 
 .gallery-container .gallery .arrow:not(.inactive):hover .svg-arrow {
@@ -525,7 +529,8 @@ body {
 /*events*/
 .events-container {
     padding: 4vw 5vw;
-    background-color: rgba(252, 214, 188, 0.2);
+    background-color: #ffffff;
+    /*background-color: rgba(252, 214, 188, 0.2);*/
 }
 
 .events-container .events {
