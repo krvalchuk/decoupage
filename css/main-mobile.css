@@ -1,16 +1,32 @@
-@media only screen and (min-width: 320px) and (max-width: 680px) {
-    .about-container .about .description .tab-text {
-        font-size: 3.3vw;
-    }
-}
+/*@media only screen and (min-width: 320px) and (max-width: 680px) {*/
+    /*.about-container .about .description .tab-text {*/
+        /*font-size: 3.3vw;*/
+        /*line-height: 1em;*/
+    /*}*/
+/*}*/
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 680px){
-    .about-container .about .description .tab-text {
-        font-size: 1.4vw;
-    }
-}
+/*@media only screen and (min-device-width: 320px) and (max-device-width: 375px){*/
+    /*.about-container .about .description .tab-text {*/
+        /*font-size: 1.4vw;*/
+        /*line-height: 1.9em;*/
+    /*}*/
+/*}*/
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 680px), only screen and (min-width: 320px) and (max-width: 680px) {
+/*@media only screen and (min-device-width: 375px) and (max-device-width: 425px){*/
+    /*.about-container .about .description .tab-text {*/
+        /*font-size: 1.6vw;*/
+        /*line-height: 1.5em;*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-device-width: 425px) and (max-device-width: 680px){*/
+    /*.about-container .about .description .tab-text {*/
+        /*font-size: 2vw;*/
+    /*}*/
+/*}*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 680px),
+only screen and (min-width: 320px) and (max-width: 680px) {
 
     .menu-container .menu a {
         font-size: 2vw;
@@ -26,9 +42,9 @@
     }
 
     .main-events-container .main-event .information .header {
-        font-size: 4vw;
-        margin-bottom: .5vw;
-        margin-top: 0;
+        font-size: 3vw;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
         line-height: 1.4em;
     }
 
@@ -62,10 +78,8 @@
 
     .about-container .about .description {
         align-items: center;
-        font-size: 2.3vw;
         width: 93%;
         margin-right: 0;
-        line-height: 1.9em;
     }
 
     .about-container .about .description .header {
@@ -74,8 +88,13 @@
         margin-bottom: 5vw;
     }
 
+    .about-container .about p.desktop:not(.mobile),
     .about-container .about br.desktop:not(.mobile) {
         display: none;
+    }
+
+    .about-container .about p.mobile {
+        display: block !important;
     }
 
     .about-container .about br.mobile {
@@ -83,11 +102,12 @@
     }
 
     .about-container .about .description .tab-text {
-        margin-bottom: 3vw;
         margin-left: 0;
         text-align: center;
         margin-top: 0;
-        width: 100%;
+        width: 90%;
+        font-size: 1.5vw;
+        line-height: 6vw;
     }
 
     .about-container .about .description .middle-text {
@@ -107,9 +127,7 @@
 
     .about-container .about .description .middle-text p {
         text-align: center;
-        font-size: 3.3vw;
         width: 100%;
-        line-height: 1.4em;
     }
 
     .about-container .about .main-photo {
